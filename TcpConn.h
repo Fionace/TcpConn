@@ -10,6 +10,7 @@
 #include "fstream"
 using namespace std;
 //#include ""
+#define INVALID_SOCKET -1
 class TcpConn
 {
   public:
@@ -17,8 +18,10 @@ class TcpConn
       ~TcpConn();
       bool initConn();
       bool AcceptConn();
+      
   private:
       int Conn;
+      int sersockfd;
       
        
 };

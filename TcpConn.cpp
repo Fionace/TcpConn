@@ -65,8 +65,8 @@ bool TcpConn::AcceptConn()
   len =sizeof(seraddr);
 if(getpeername(cliconn,(sockaddr*)&seraddr,&len )==-1);
  {
-   printf( "getsockname   error   %d\n ",   WSAGetLastError());
-   // printf("the server info achieved failed!\n");
+  // printf( "getsockname   error   %d\n ",   WSAGetLastError());
+    printf("the server info achieved failed!\n");
     close(cliconn);
     close(sersocket);
     return -1;

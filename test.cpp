@@ -3,7 +3,7 @@
 #include"TcpConn.h"
 #include"TcpCli.h"
 using namespace std;
-void main(int argc,char **argv)
+int main(int argc,char **argv)
 {
   TcpConn *Serv=new TcpConn;
   TcpCli *Cli=new TcpCli;
@@ -22,5 +22,6 @@ void main(int argc,char **argv)
   delete Serv;
   delete Cli;
   printf("成功建立\n");
+  exit(0);
   
 }

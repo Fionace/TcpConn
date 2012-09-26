@@ -24,16 +24,19 @@ bool TcpConn::initConn(int port)
    if((sersocket=socket(AF_INET,SOCK_STREAM,0))<0)
        {
          printf("Could not create the server socket!\n");
+          close(sersocket);
           return -1;
        }
     if(bind(sersocket,(struct sockaddr)&seraddr,sizeof(servaddr))!=0)
     {
       printf("Could not bind successfully !\n");
+      close(sersocket);
           return -1;
     }
     if(listen(sersocket,SOMAXCONN)!=0)
     {
       printf("Could not listen successfully !\n");
+      close(sersocket);
           return -1;
     }
     printf("Server begin to listen ...\n");
@@ -50,6 +53,7 @@ bool TcpConn::AcceptConn()
   {
     printf("Connect to the server failed!\n");
     close(cliconn);
+    close(sersocket);
     return -1
   }
   printf("Connect successfully!\n");

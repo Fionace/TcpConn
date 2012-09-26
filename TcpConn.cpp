@@ -49,6 +49,7 @@ bool TcpConn::AcceptConn()
   if (cliconn==-1)
   {
     printf("Connect to the server failed!\n");
+    close(cliconn);
     return -1
   }
   printf("Connect successfully!\n");

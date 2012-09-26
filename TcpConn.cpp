@@ -62,7 +62,7 @@ bool TcpConn::AcceptConn()
   printf("Connect successfully!\n");
   socklen_t len;
   len =sizeof(seraddr);
- if(getsockname(cliconn,(sockaddr*)&seraddr,&len )==-1);
+ if(getsockname(sersocket,(sockaddr*)&seraddr,&len )==-1);
  {
     printf("the server info achieved failed!\n");
     close(cliconn);

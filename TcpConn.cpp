@@ -1,4 +1,4 @@
-#include<TcpConn.h>
+#include"TcpConn.h"
 /*构造函数*/
 TcpConn::TcpConn()
 {
@@ -27,7 +27,7 @@ bool TcpConn::initConn(int port)
           close(sersocket);
           return -1;
        }
-    if(bind(sersocket,(struct sockaddr)&seraddr,sizeof(servaddr))!=0)
+    if(bind(sersocket,(sockaddr*)&seraddr,sizeof(seraddr))!=0)
     {
       printf("Could not bind successfully !\n");
       close(sersocket);
@@ -48,13 +48,13 @@ bool TcpConn::AcceptConn()
   //struct sockaddr cliaddr;
   int cliaddrLen = sizeof(cliaddr);
   int cliconn = INVALID_SOCKET;
-  cliconn=accept(sersocket,(sockaddr*)&cliaddr,(socklen_t*)&cliaddrlen);
+  cliconn=accept(sersocket,(sockaddr*)&cliaddr,(socklen_t*)&cliaddrLen);
   if (cliconn==-1)
   {
     printf("Connect to the server failed!\n");
     close(cliconn);
     close(sersocket);
-    return -1
+    return -1;
   }
   printf("Connect successfully!\n");
     return  1;

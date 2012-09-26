@@ -21,7 +21,7 @@ class TcpConn
       
   private:
      // int Conn;
-      int sersockfd;
+      int sersocket;
       
        
 };

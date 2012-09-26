@@ -20,6 +20,7 @@ class TcpConn
       bool initConn(int port);
       bool AcceptConn();
       
+      
   private:
      // int Conn;
       int sersocket;

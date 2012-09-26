@@ -19,7 +19,8 @@ Class TcpCli{
   public:
    TcpCli();
    ~TcpCli();
-  bool AttempConn();
+   bool CliSock();
+  bool AttempConn(const char *ip ,int port);
   private:
   int clisocket;
 };

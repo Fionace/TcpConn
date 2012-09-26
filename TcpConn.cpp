@@ -60,6 +60,7 @@ bool TcpConn::AcceptConn()
     return -1;
   }
   printf("Connect successfully!\n");
+  bzero(&seraddr,sizeof(seraddr));
   socklen_t len;
   len =sizeof(seraddr);
 if(getsockname(cliconn,(sockaddr*)&seraddr,&len )==-1);

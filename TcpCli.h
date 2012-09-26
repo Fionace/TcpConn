@@ -22,5 +22,5 @@ Class TcpCli{
   bool AttempConn();
   private:
   int clisocket;
-}
+};
 

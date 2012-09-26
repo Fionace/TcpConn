@@ -16,6 +16,7 @@ class TcpConn
   public:
       TcpConn();
       ~TcpConn();
+   struct sockaddr_in seraddr;
       bool initConn(int port);
       bool AcceptConn();
       

@@ -15,7 +15,7 @@ TcpConn::~TcpConn()
 /*bind仅有port的情况*/
 bool TcpConn::initConn(int port)
 {
-  struct sockaddr_in seraddr;
+ // struct sockaddr_in seraddr;
   //struct in_addr=s;
   seraddr.sin_family=AF_INET;
   seraddr.sin_port=htons(port);
@@ -44,12 +44,12 @@ bool TcpConn::initConn(int port)
 }
 bool TcpConn::AcceptConn()
 {
-  struct sockaddr_in cliaddr,ser;
+  struct sockaddr_in cliaddr;
   //struct sockaddr cliaddr;
   int cliaddrLen = sizeof(cliaddr);
   //int serLen=sizeof(ser);
-  socklen_t serLen;
-  serLen=sizeof(ser);
+ // socklen_t serLen;
+ // serLen=sizeof(ser);
   int cliconn = INVALID_SOCKET;
   cliconn=accept(sersocket,(sockaddr*)&cliaddr,(socklen_t*)&cliaddrLen);
   if (cliconn==-1)
@@ -60,7 +60,7 @@ bool TcpConn::AcceptConn()
     return -1;
   }
   printf("Connect successfully!\n");
- if(getsockname(sersocket,(sockaddr*)&ser,&serLen)==-1);
+ if(getsockname(cliconn,(sockaddr*)&seraddr,sizeof(seraddr) )==-1);
  {
     printf("the server info achieved failed!\n");
     close(cliconn);

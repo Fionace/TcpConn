@@ -70,7 +70,7 @@ bool TcpConn::AcceptConn()
     return -1;
   }
    char  serip[INET_ADDRSTRLEN];
-  inet_ntop(ser.sin_family,(sockaddr*)&seraddr,serip,sizeof(serip));
+  inet_ntop(AF_INET,(sockaddr*)&seraddr,serip,sizeof(serip));
  printf("The server info is %s\n",serip);
     return  1;
   

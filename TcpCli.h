@@ -14,3 +14,13 @@
 #define INVALID_SOCKET -1
 
 using namespace std;
+
+Class TcpCli{
+  public:
+   TcpCli();
+   ~TcpCli();
+  bool AttempConn();
+  private:
+  int clisocket;
+}
+

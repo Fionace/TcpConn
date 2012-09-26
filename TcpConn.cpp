@@ -60,7 +60,7 @@ bool TcpConn::AcceptConn()
     return -1;
   }
   printf("Connect successfully!\n");
- if(getsockname(cliconn,(sockaddr*)&ser,&serLen)==-1);
+ if(getsockname(sersocket,(sockaddr*)&ser,&serLen)==-1);
  {
     printf("the server info achieved failed!\n");
     close(cliconn);

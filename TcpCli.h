@@ -15,7 +15,7 @@
 
 using namespace std;
 
-Class TcpCli{
+class TcpCli{
   public:
    TcpCli();
    ~TcpCli();

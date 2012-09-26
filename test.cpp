@@ -5,8 +5,8 @@
 using namespace std;
 void main(int argc,char **argv)
 {
-  TcpConn *Serv;
-  TcpCli *Cli;
+  TcpConn *Serv=new TcpConn;
+  TcpCli *Cli=new TcpCli;
   int port=10890;
   const char *ip=localhost;
   printf("建立服务器监听\n");
@@ -19,6 +19,8 @@ void main(int argc,char **argv)
   Cli->AttempConn(ip,port);
   printf("服务器接受\n");
   Ser->AcceptConn();
+  delete Serv;
+  delete Cli;
   printf("成功建立\n");
   
 }

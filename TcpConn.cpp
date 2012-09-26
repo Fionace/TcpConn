@@ -60,7 +60,9 @@ bool TcpConn::AcceptConn()
     return -1;
   }
   printf("Connect successfully!\n");
- if(getsockname(cliconn,(sockaddr*)&seraddr,sizeof(seraddr) )==-1);
+  socklen_t len;
+  len =sizeof(seraddr);
+ if(getsockname(cliconn,(sockaddr*)&seraddr,&len )==-1);
  {
     printf("the server info achieved failed!\n");
     close(cliconn);
@@ -68,7 +70,7 @@ bool TcpConn::AcceptConn()
     return -1;
   }
    char  serip[INET_ADDRSTRLEN];
-  inet_ntop(ser.sin_family,(sockaddr*)&ser,serip,sizeof(serip));
+  inet_ntop(ser.sin_family,(sockaddr*)&seraddr,serip,sizeof(serip));
  printf("The server info is %s\n",serip);
     return  1;
   

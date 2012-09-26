@@ -16,13 +16,12 @@ class TcpConn
   public:
       TcpConn();
       ~TcpConn();
-      bool initConn();
+      bool initConn(int port);
       bool AcceptConn();
       
   private:
-      int Conn;
+     // int Conn;
       int sersockfd;
       
        
 };
-

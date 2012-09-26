@@ -48,6 +48,8 @@ bool TcpConn::AcceptConn()
   //struct sockaddr cliaddr;
   int cliaddrLen = sizeof(cliaddr);
   //int serLen=sizeof(ser);
+  socklen_t serLen;
+  serLen=sizeof(ser);
   int cliconn = INVALID_SOCKET;
   cliconn=accept(sersocket,(sockaddr*)&cliaddr,(socklen_t*)&cliaddrLen);
   if (cliconn==-1)
@@ -58,7 +60,7 @@ bool TcpConn::AcceptConn()
     return -1;
   }
   printf("Connect successfully!\n");
- if(getsockname(cliconn,(sockaddr*)&ser,sizeof(ser))==-1);
+ if(getsockname(cliconn,(sockaddr*)&ser,&serLen==-1);
  {
     printf("the server info achieved failed!\n");
     close(cliconn);

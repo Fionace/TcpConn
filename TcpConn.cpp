@@ -2,14 +2,14 @@
 /*构造函数*/
 TcpConn::TcpConn()
 {
-  sersockfd=-1;
-  Conn=0;
+  sersocket=-1;
+ // Conn=0;
 }
 /*析构函数，要关闭还未关闭的套接字*/
 TcpConn::~TcpConn()
 {
-  if (sersockfd != -1)
-      close(sersockfd);
+  if (sersocket != -1)
+      close(sersocket);
 }
 /*初始化服务器监听端口，包括套接字建立，绑定端口，到开始监听的过程*/
 /*bind仅有port的情况*/

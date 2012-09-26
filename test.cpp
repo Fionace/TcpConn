@@ -3,12 +3,12 @@
 #include"TcpConn.h"
 #include"TcpCli.h"
 using namespace std;
-void main(int argc,char **argv)
+int main(int argc,char **argv)
 {
   TcpConn *Serv;
   TcpCli *Cli;
   int port=10890;
-  const char *ip=localhost;
+  const char *ip="10.0.2.15";
   printf("建立服务器监听\n");
   Serv->initConn(port);
   printf("等待连接\n");
@@ -18,7 +18,7 @@ void main(int argc,char **argv)
   printf("客户发起连接\n");
   Cli->AttempConn(ip,port);
   printf("服务器接受\n");
-  Ser->AcceptConn();
+  Serv->AcceptConn();
   printf("成功建立\n");
-  
+  exit(0);
 }

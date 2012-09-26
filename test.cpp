@@ -12,7 +12,7 @@ int main(int argc,char **argv)
   printf("建立服务器监听\n");
   Serv->initConn(port);
   printf("等待连接\n");
-  sleep(9000);
+  //sleep(9000);
   printf("客户套接字建立\n");
   Cli->CliSock();
   printf("客户发起连接\n");

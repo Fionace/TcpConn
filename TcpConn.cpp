@@ -64,7 +64,7 @@ bool TcpConn::AcceptConn()
   socklen_t len;
   len =sizeof(seraddr);
  // int n;
-  extern int errno;
+   int errno;
 if((errno=getsockname(cliconn,(sockaddr*)&seraddr,&len ))==-1);
  {
    

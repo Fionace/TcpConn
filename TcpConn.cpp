@@ -66,7 +66,7 @@ bool TcpConn::AcceptConn()
  // int n;
    int err;
    err=getsockname(cliconn,(sockaddr*)&seraddr,&len );
-if(err==-1);
+if(err ！=0)
  {
    
   // printf( "getsockname   error   %d\n ",   WSAGetLastError());

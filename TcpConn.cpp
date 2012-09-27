@@ -64,15 +64,15 @@ bool TcpConn::AcceptConn()
   socklen_t len;
   len =sizeof(seraddr);
  // int n;
-   int errno;
-   errno=getsockname(cliconn,(sockaddr*)&seraddr,&len );
-if(errno==-1);
+   int err;
+   err=getsockname(cliconn,(sockaddr*)&seraddr,&len );
+if(err==-1);
  {
    
   // printf( "getsockname   error   %d\n ",   WSAGetLastError());
     printf("the server info achieved failed!\n"); 
-    printf("errno=%d\n",errno);
-   char * mesg = strerror(errno);
+    printf("errno=%d\n",err);
+   char * mesg = strerror(err);
     printf("Mesg:%s\n",mesg);
     close(cliconn);
     close(sersocket);
